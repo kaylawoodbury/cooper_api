@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe User, type: :model do
   it 'should have valid Factory' do
@@ -16,6 +17,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_confirmation_of :password }
 
     context 'should not have an invalid email address' do
+      binding.pry
       emails = ['asdf@ ds.com', '@example.com', 'test me @yahoo.com',
                 'asdf@example', 'ddd@.d. .d', 'ddd@.d']
 
