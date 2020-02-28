@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
     namespace :v1, defaults: { format: :json } do
       resources :performance_data, only: [:create, :index]
+      resources :bmi_data, only: [:create, :index]
     end
   end    
 end
